@@ -2,9 +2,11 @@
 #include <string>
 #include <fstream>
 #include "cypher.h"
+#include "argument.h"
 
 using namespace std; 
 
+/*#ifndef CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "cypher.h"
@@ -37,11 +39,23 @@ TEST_CASE("Cypher::run_cypher_and_copy_to_file _ can finish") {
 	string test_word = "Case";
 	Cypher test_case;
 	REQUIRE(test_case.run_cypher_and_copy_to_file("original_text_file.txt", "cypher_text_file.txt", 4));
-}
-
-
+}*/
 
 int main(int argc, char * const argv[]) {
-	Cypher test;
-	test.run_cypher_and_copy_to_file("original_text_file.txt", "cypher_text_file.txt", 1);
+	/*string input_filename, output_filename;
+	int shift_num;
+	cout << "Enter input filename:" << endl;
+	cin >> input_filename; 
+	cout << "Enter shift number: " << endl;
+	cin >> shift_num;
+	cout << "Enter output filename:" << endl;
+	cin >> output_filename;
+	cout << "Encoding finished." <<endl;
+
+	Cypher run;
+	run.run_cypher_and_copy_to_file(input_filename, output_filename, shift_num);
+	*/
+
+	Argument start(argc, argv, "original_text_file.txt");
+	start.run();
 }
